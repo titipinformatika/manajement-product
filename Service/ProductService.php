@@ -1,6 +1,6 @@
 <?php
 namespace  TitipInformatika\Service;
-use Entity\Product;
+use TitipInformatika\Entity\Product;
 
 interface ProductService{
 
@@ -10,7 +10,7 @@ interface ProductService{
 
     public function edit(Product $product):void;
 
-    public function showProduct():array;
+    public function showProduct():void;
 
     public function findById(string $id):void;
 }

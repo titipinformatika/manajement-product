@@ -1,5 +1,5 @@
 <?php
-namespace TitipInformatika\Sevice\Impl;
+namespace TitipInformatika\Service\Impl;
 use TitipInformatika\Service\ProductService;
 use TitipInformatika\Entity\Product;
 use TitipInformatika\Repository\ProductRepository;
@@ -9,8 +9,12 @@ class ProductServiceImpl implements ProductService{
     }
 
     public function save(Product $product):void{
-        $result=$this->productRepository->save($product);
-        echo "Success Menambah Produk : {$result->getName()}";
+        if($this->productRepository->findById($product->getId()) !=null){
+            echo "Product already exist".PHP_EOL;
+        }else{
+            $result=$this->productRepository->save($product);
+            echo "Success Menambah Produk : {$result->getName()}".PHP_EOL;
+        }
     }
 
     public function delete(string $id ):void{
