@@ -1,0 +1,31 @@
+{
+    "name": "riki/php-todolist-databases",
+    "description": "studi kasus membuat app add todo list dan product",
+    "type": "project",
+    "require": {
+        "phpunit/phpunit":"9.5.5",
+        "ramsey/uuid":"4.7.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "TitipInformatika\\Service\\":"Service/",
+            "TitipInformatika\\Service\\Impl\\":"Service/Impl/",
+            "TitipInformatika\\Repository\\":"Repository/",
+            "TitipInformatika\\Repository\\Impl\\":"Repository/Impl/",
+            "TitipInformatika\\Config\\":"Config/",
+            "TitipInformatika\\Entity\\":"Entity/",
+            "TitipInformatika\\Helper\\":"Helper/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "TitipInformatika\\Service\\":"Tests/Service/",
+            "TitipInformatika\\Service\\Impl\\":"Tests/Service/Impl/",
+            "TitipInformatika\\Repository\\":"Tests/Repository/",
+            "TitipInformatika\\Repository\\Impl\\":"Tests/Repository/Impl/",
+            "TitipInformatika\\Config\\":"Tests/Config/",
+            "TitipInformatika\\Entity\\":"Tests/Entity/",
+            "TitipInformatika\\Helper\\":"Tests/Helper/"
+        }
+    }
+}
