@@ -22,12 +22,12 @@ class ProductServiceImpl implements ProductService{
         if($this->productRepository->findById($id) !=null){
             $result=$this->productRepository->delete($id);
             if($result){
-                echo "Success Deleted Product";
+                echo "Success Deleted Product".PHP_EOL;
             }else{
-                echo "Failed Deleted Product";
+                echo "Failed Deleted Product".PHP_EOL;
             }
         }else{
-                echo "Product Not Found";
+                echo "Product Not Found".PHP_EOL;
         }
 
     }

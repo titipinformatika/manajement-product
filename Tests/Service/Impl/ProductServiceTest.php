@@ -53,15 +53,30 @@ class ProductServiceTest extends TestCase{
 
     }
 
-    // function testDeleteSuccess(){
-    //     $product = new Product();
-    //     $product->setId("1");
-    //     $product->setName("Macbook Pro M2");
-    //     $product->setDescription("Macbook Chip M2");
-    //     $product->setPrice(20_100_000);
-    //     $product->setQuantity(10);
-    //     $this->productService->save($product);
-    // }
+    function testDeleteFailed(){
+        $this->productService->delete(10);
+        $this->expectOutputString("Product Not Found".PHP_EOL);
+        
+    }
     
+    function testDeleteSuccess(){
+        $this->productService->delete("1");
+        $this->expectOutputString("Success Deleted Product".PHP_EOL);
+    }
+
+    function testShowNotFound(){
+        $this->productService->showProduct();
+        self::expectOutputString("Product Empty".PHP_EOL);
+    }
+
+    function testShowSuccess(){
+        $this->productService->showProduct();
+        self::expectOutputString("Product Id: 1".PHP_EOL."Product Name: Macbook Pro M2".PHP_EOL);
+        self::expectOutputString("Product Name: Macbook Pro M2".PHP_EOL);
+        self::expectOutputString("Product Description: Macbook Chip M2".PHP_EOL);
+        self::expectOutputString("Price: 20100000".PHP_EOL);
+        self::expectOutputString("Product Stok: 10".PHP_EOL);
+        // self::expectOutputString("---------------------------------".PHP_EOL);
+    }
 
 }
